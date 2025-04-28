@@ -1,0 +1,526 @@
+/* 
+ * Pet Care Center - Main Stylesheet
+ * Created: April 24, 2025 
+ */
+
+/* === CSS RESET & BASE STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #4b70e2;
+  --primary-dark: #3657b3;
+  --secondary-color: #8cc63f;
+  --secondary-dark: #6ea32d;
+  --accent-color: #ff9a3c;
+  --background-light: #f5f7fa;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --text-muted: #888888;
+  --border-color: #dddddd;
+  --danger-color: #e74c3c;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --info-color: #3498db;
+  --white: #ffffff;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --border-radius: 6px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* === HEADER STYLES === */
+header {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+}
+
+nav li a {
+  display: block;
+  padding: 8px 15px;
+  font-weight: 500;
+  color: var(--text-dark);
+  border-radius: var(--border-radius);
+}
+
+nav li a:hover {
+  background-color: var(--background-light);
+  color: var(--primary-color);
+}
+
+nav li a.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* === MAIN CONTENT === */
+main {
+  padding: 30px 0;
+  min-height: calc(100vh - 140px);
+}
+
+.welcome-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.welcome-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* === DASHBOARD GRID === */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  height: 100%;
+}
+
+.dashboard-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dashboard-list {
+  list-style: none;
+}
+
+.dashboard-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dashboard-list li:last-child {
+  border-bottom: none;
+}
+
+.view-all-link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  padding: 8px 0;
+  font-weight: 500;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Appointment styles */
+.appointment-date {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.appointment-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appointment-status, .boarding-status, .bill-status {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  color: var(--white);
+}
+
+.scheduled {
+  background-color: var(--info-color);
+}
+
+.confirmed {
+  background-color: var(--success-color);
+}
+
+.completed {
+  background-color: var(--text-muted);
+}
+
+.cancelled {
+  background-color: var(--danger-color);
+}
+
+.pending {
+  background-color: var(--warning-color);
+}
+
+.paid {
+  background-color: var(--success-color);
+}
+
+.partial {
+  background-color: var(--accent-color);
+}
+
+.checked_in {
+  background-color: var(--success-color);
+}
+
+.booked {
+  background-color: var(--info-color);
+}
+
+.checked_out {
+  background-color: var(--text-muted);
+}
+
+/* Boarding styles */
+.boarding-date {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.boarding-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Bill styles */
+.bill-date {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.bill-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Services styles */
+.services-card {
+  grid-column: span 2;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.service-item {
+  background-color: var(--background-light);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.service-item:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.service-item h4 {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.service-price {
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.service-duration {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Quick Actions */
+.quick-actions {
+  grid-column: span 2;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.btn-action {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-action:hover {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.btn-action.emergency {
+  background-color: var(--danger-color);
+}
+
+.btn-action.emergency:hover {
+  background-color: #c0392b;
+}
+
+/* === BUTTONS === */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-align: center;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  color: var(--white);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-align: center;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
+  color: var(--white);
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 7px 15px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* === FORMS === */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(75, 112, 226, 0.2);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: var(--success-color);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* === LOGIN/REGISTER FORM === */
+.auth-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: var(--white);
+  padding: 20px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+footer p {
+  margin: 5px 0;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVE STYLES === */
+@media (max-width: 768px) {
+  header .container {
+      flex-direction: column;
+      gap: 15px;
+  }
+  
+  nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .dashboard-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .services-card, .quick-actions {
+      grid-column: span 1;
+  }
+  
+  .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+      flex-direction: column;
+      gap: 5px;
+  }
+  
+  nav li a {
+      text-align: center;
+  }
+  
+  .services-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+      grid-template-columns: 1fr;
+  }
+}
+
+
